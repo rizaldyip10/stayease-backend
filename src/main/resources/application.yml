@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: stayease
+  config:
+    import: optional:.env.properties
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      allow-pool-suspension: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      password: ${REDIS_PASSWORD}
+      database: 0
+      ssl:
+        enabled: true
+      timeout: 60000
+    jdbc:
+      repositories:
+        enabled: false
+  mail:
+    host: smtp.mailersend.net
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
