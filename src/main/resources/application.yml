@@ -38,3 +38,11 @@ spring:
           auth: true
           starttls:
             enable: true
+
+midtrans:
+  server:
+    key: ${MIDTRANS_SERVER_KEY}
+  client:
+    key: ${MIDTRANS_CLIENT_KEY}
+  is:
+    production: false
