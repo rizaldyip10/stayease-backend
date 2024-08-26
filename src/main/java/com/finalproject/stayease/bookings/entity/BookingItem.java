@@ -6,6 +6,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 import java.time.Instant;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -18,7 +19,7 @@ public class BookingItem {
     private Long id;
 
     @Column(name = "booking_id")
-    private Long bookingId;
+    private UUID bookingId;
 
     @Column(name = "room_id")
     private Long roomId;
@@ -31,6 +32,17 @@ public class BookingItem {
 
     @Column(name = "price")
     private Double price;
+
+    @Column(name = "total_adults")
+    private int totalAdults;
+
+    @Column(name = "total_children")
+    private int totalChildren;
+
+    @Column(name = "total_infants")
+    private int totalInfants;
+
+    private boolean isExtending;
 
     @ColumnDefault("CURRENT_TIMESTAMP")
     @Column(name = "created_at", nullable = false)

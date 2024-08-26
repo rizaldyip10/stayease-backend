@@ -1,7 +1,7 @@
 package com.finalproject.stayease.midtrans.service.impl;
 
 import com.finalproject.stayease.midtrans.dto.MidtransReqDto;
-import com.finalproject.stayease.midtrans.service.MidtransService;
+import com.finalproject.stayease.transactions.midtrans.service.MidtransService;
 import com.midtrans.httpclient.error.MidtransError;
 import com.midtrans.service.MidtransCoreApi;
 import org.json.JSONObject;

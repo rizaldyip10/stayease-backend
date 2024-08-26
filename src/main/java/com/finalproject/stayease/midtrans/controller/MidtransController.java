@@ -1,7 +1,7 @@
 package com.finalproject.stayease.midtrans.controller;
 
 import com.finalproject.stayease.midtrans.dto.MidtransReqDto;
-import com.finalproject.stayease.midtrans.service.MidtransService;
+import com.finalproject.stayease.transactions.midtrans.service.MidtransService;
 import com.finalproject.stayease.responses.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

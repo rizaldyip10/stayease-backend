@@ -1,4 +1,4 @@
-package com.finalproject.stayease.midtrans.service;
+package com.finalproject.stayease.transactions.midtrans.service;
 
 import com.finalproject.stayease.midtrans.dto.MidtransReqDto;
 import org.json.JSONObject;

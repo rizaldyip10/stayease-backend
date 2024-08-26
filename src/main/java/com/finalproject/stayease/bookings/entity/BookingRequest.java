@@ -1,40 +1,36 @@
-package com.finalproject.stayease.payment.entity;
+package com.finalproject.stayease.bookings.entity;
 
-import com.finalproject.stayease.bookings.entity.Booking;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.time.Instant;
+import java.util.Date;
 
 @Entity
 @Data
-@Table(name = "payments")
-public class Payment {
+@Table(name = "booking_requests")
+public class BookingRequest {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "booking_id")
+    @ManyToOne(fetch = FetchType.LAZY)
     private Booking booking;
 
-    @Column(name = "amount")
-    private Double amount;
+    @Column(name = "checkin_time")
+    private Date checkInTime;
 
-    @Column(name = "payment_method")
-    private String paymentMethod;
+    @Column(name = "checkout_time")
+    private Date checkOutTime;
 
-    @Column(name = "payment_status")
-    private String paymentStatus;
+    @Column(name = "non_smoking")
+    private boolean nonSmoking;
 
-    @Column(name = "payment_proof")
-    private String paymentProof;
-
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "payment_expiration_at")
-    private Instant paymentExpirationAt;
+    @Column(name = "other")
+    private String other;
 
     @ColumnDefault("CURRENT_TIMESTAMP")
     @Column(name = "created_at", nullable = false)
